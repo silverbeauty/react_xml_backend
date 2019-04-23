@@ -18,6 +18,6 @@ app.use(express.json({limit: '50mb'}))
 app.use(express.urlencoded({ extended: false, limit: '50mb' }))
 app.use(cookieParser())
 
-app.use('/api', indexRouter)
+app.use('/api/v1', indexRouter)
 
 module.exports = app
