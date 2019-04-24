@@ -2,7 +2,7 @@
 
 ## How to run
 ### Dev  
-`npm run start:dev`
+`npm run dev`
 ### Production
 `npm run build`
 
