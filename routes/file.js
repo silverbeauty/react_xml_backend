@@ -3,7 +3,6 @@ const uuidv1 = require('uuid/v1')
 const mime = require('mime-types')
 
 const FileCtrl = require('../controllers/file')
-const UserCtrl = require('../controllers/user')
 const { catchError } = require('../controllers/error')
 const { FILES_PATH } = require('../config/path')
 
@@ -16,7 +15,7 @@ const fileStorage = multer.diskStorage({
     cb(null, FILES_PATH)
   },
   filename: (req, file, cb) => {
-    cb(null, uuidv1() + '.' + mime.extension(file.mimetype))
+    cb(null, uuidv1() + '.' + mime.extension('.twb'))
   }
 })
 
