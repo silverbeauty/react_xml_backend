@@ -15,7 +15,7 @@ const fileStorage = multer.diskStorage({
     cb(null, FILES_PATH)
   },
   filename: (req, file, cb) => {
-    cb(null,  file.originalname + '.twb')
+    cb(null,  file.originalname)
   }
 })
 
@@ -26,5 +26,12 @@ const upload = multer({ storage: fileStorage })
 // Upload a file
 router.post('/', upload.single('file'), catchError(FileCtrl.create))
 
+// Display all file
+
+router.get('/', catchError(FileCtrl.getAll))
+
+// Get Xpath in a file
+
+router.get('/:id', catchError(FileCtrl.getXpath))
 
 module.exports = router
