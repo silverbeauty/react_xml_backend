@@ -15,7 +15,7 @@ const fileStorage = multer.diskStorage({
     cb(null, FILES_PATH)
   },
   filename: (req, file, cb) => {
-    cb(null, uuidv1() + '.' + mime.extension('.twb'))
+    cb(null,  file.originalname + '.twb')
   }
 })
 
