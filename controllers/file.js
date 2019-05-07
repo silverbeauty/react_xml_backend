@@ -2,8 +2,10 @@ const File = require('../models/file')
 const urls = require('../constants/urls')
 const xpath = require('xpath')
 const dom = require('xmldom').DOMParser
+const { FILES_PATH } = require('../config/path')
 
 const create = async (req, res) => {
+    console.log('FILES_PATH', FILES_PATH)
     if (req.file) {   
         const file = new File({
             name: req.file.filename,
@@ -41,13 +43,7 @@ const getAll = async (req, res) => {
       })
 }
 
-const getXpath = async (req, res) => {
-    let xml = "<book><title>Harry Potter</title></book>"
-    let doc = new dom().parseFromString(xml)
-    let nodes = xpath.select("//title", doc)
-}
 module.exports = {
     create,
     getAll,
-    getXpath
 }
