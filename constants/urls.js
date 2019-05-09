@@ -7,8 +7,8 @@ if(process.env.NODE_ENV === 'production') {
   } else {
     urls = {
       DOMAIN_URL: 'http://localhost:8008/',
-      API_URL: 'http://localhost:3000/api/vi/',
-      FILE_URL: 'http://localhost:3000/api/vi/file/'
+      API_URL: 'http://localhost:3000/api/v1/',
+      FILE_URL: 'http://localhost:3000/api/v1/file/'
     }
   }
 
